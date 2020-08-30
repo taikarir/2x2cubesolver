@@ -1,5 +1,6 @@
 # Author: Tai Karir
-# Date: 12/24/17
+# Date: 08/29/2020
+# Email: tai.karir@gmail.com
 # Purpose: the purpose of this program is to have the computer solve a 2x2
 #          rubik's cube. You can use two methods to solve the cube: brute
 #          force, where the computer makes random moves to solve the cube,
@@ -148,33 +149,7 @@ class Cube:
                     self.fnumber=i
                     return True
             return False
-#            if self.isFaceSolved(1):
-#                self.fcolor=self.ful.a
-#                self.fnumber=1
-#                return True
-#            elif self.isFaceSolved(2):
-#                self.fcolor=self.ful.b
-#                self.fnumber=2
-#                return True
-#            elif self.isFaceSolved(3):
-#                self.fcolor=self.ful.c
-#                self.fnumber=3
-#                return True
-#            elif self.isFaceSolved(4):
-#                self.fcolor=self.fur.d
-#                self.fnumber=4
-#                return True
-#            elif self.isFaceSolved(5):
-#                self.fcolor=self.fdr.e
-#                self.fnumber=5
-#                return True
-#            elif self.isFaceSolved(6):
-#                self.fcolor=self.bul.a
-#                self.fnumber=6
-#                return True
-#            else:
-#                return False
-    # this function scrambles the cube randomly
+    #this function makes a random move
     def move_random(self,y):
         if y==1:
             self.Ri()
@@ -200,13 +175,13 @@ class Cube:
             self.Bi()
         elif y==12:
             self.B()
+    #this function scrambles the cube
     def scramble_cube(self,turns):
         for x in range(0,turns):
             y=random.randrange(1,13)
             self.move_random(y)
             self.scramblesequence.append(self.numberMove.get(y))
-    # this function attempts to solve the rubik's cube by brute force
-    # (randomly picking moves)
+    #this function attempts to solve the rubik's cube by brute force (randomly picking moves)
     def brute_force_solver(self):
         y=random.randint(1,13)
         if y==self.oppositeMoves.get(self.prev):
