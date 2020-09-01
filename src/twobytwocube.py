@@ -277,12 +277,14 @@ if __name__=="__main__":
     myCube=Cube(0,0,0,0,[],0)
     print("Initial cube state")
     myCube.print_cube()
-    print("Scramble sequence:")
+    x=input("\nEnter to scramble")
+    print("\nScramble sequence:")
     myCube.scramble_cube(32)
+    print("\nSequence:{}".format(myCube.scramblesequence))
     print("\nScrambled cube state")
     myCube.print_cube()
+    x=input("\nEnter to start")
     t=time.time()
-    print("\nSequence:{}".format(myCube.scramblesequence))
     while True:
         if myCube.isFaceSolved(0):
             break
